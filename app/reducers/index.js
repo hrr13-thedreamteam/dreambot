@@ -1,10 +1,9 @@
-import { createStore } from 'redux';
+import { combineReducers } from 'redux';
+import messages from './messages';
 
-function messages(state, action) {
-  switch (action.type) {
-    case 'ADD_MESSAGE':
-      return state.concat(action.msg);
-    default:
-      return state;
-  }
-}
+const rootReducer = combineReducers({
+  messages
+})
+
+export default rootReducer;
+

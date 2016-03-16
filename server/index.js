@@ -13,6 +13,7 @@ var webpackHotMiddleware = require('webpack-hot-middleware');
 var config = require('../webpack.config.js');
 var connect = require('./utils/connect');
 var env = require('./utils/envDefaults');
+var apiRoutes = require('./api');
 
 require('./bot/bot.js');
 
@@ -37,6 +38,7 @@ io.on('connection', (socket) => {
 
 // Add routes to app here:
 // ex: app.use('/api', apiRoutes);
+app.use('/api', apiRoutes);
 
 // referenced https://github.com/christianalfoni/webpack-express-boilerplate
 if (env.isDev) {
