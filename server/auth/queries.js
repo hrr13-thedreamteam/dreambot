@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import { r, RP } from 'rethinkdb-websocket-server';
 import jwt from 'jwt-simple';
 import connect from '../utils/connect';
@@ -34,24 +33,7 @@ export const sessionCreator = urlQueryParams => {
 
 
 export const queryWhitelist = [
-  // r.table("messages").hasFields("classification").group("classification").count().opt("db", r.db("test"))
-  r.table('messages')
-    .hasFields('classification')
-    .group('classification')
-    .count()
-    .opt('db', r.db('test'))
-    .validate(auth('admin')),
-
-  // r.table("messages").limit(1000).group("user").getField("tokens").concatMap(function(var_2) { return var_2; }).count().opt("db", r.db("test"))
-  r.table('messages')
-    .limit(1000)
-    .group('user')
-    .getField('tokens')
-    .concatMap((var2) => var2)
-    .count()
-    .opt('db', r.db('test'))
-    .validate(auth('admin')),
-
+  // r.table('messages').changes().opt('db', r.db('test'))
   r.table('messages')
     .changes()
     .opt('db', r.db('test'))
@@ -60,12 +42,6 @@ export const queryWhitelist = [
   // r.table('messages').opt('db', r.db('test'))
   r.table('messages')
     .opt('db', r.db('test'))
-    .validate(auth('admin')),
-
-  // r.table("messages").group("user").count().opt("db", r.db("test"))
-  r.table('messages')
-    .group('user')
-    .count().opt('db', r.db('test'))
     .validate(auth('admin')),
 
   // r.table('messages').getField('tokens').concatMap(function(var_0) { return var_0; }).opt('db', r.db('test'))
@@ -80,14 +56,6 @@ export const queryWhitelist = [
     .filter(r.row('ts').date().eq(r.time(isNumber(), isNumber(), isNumber(), 'Z')))
     .group(r.row('ts').hours())
     .count()
-    .opt('db', r.db('test'))
-    .validate(auth('admin')),
-
-  // r.table("messages").filter(r.row("ts").date().eq(r.time(2016, 3, 12, "Z"))).group(r.row("ts").hours()).avg("score").opt("db", r.db("test"))
-  r.table('messages')
-    .filter(r.row('ts').date().eq(r.time(isNumber(), isNumber(), isNumber(), 'Z')))
-    .group(r.row('ts').hours())
-    .avg('score')
     .opt('db', r.db('test'))
     .validate(auth('admin')),
 

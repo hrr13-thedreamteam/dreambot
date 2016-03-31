@@ -27,7 +27,7 @@ listen({
   httpPath: '/db',
   dbHost: rethinkHost,
   dbPort: rethinkPort,
-  unsafelyAllowAnyQuery: isDev,
+  unsafelyAllowAnyQuery: true, // env.isDev,
   queryWhitelist,
   sessionCreator
 });
@@ -43,6 +43,7 @@ app.get('/api/cohort', function(req, res) {
       request(`https://slack.com/api/users.list?token=${process.env.token}`, function(err, response, body) {
         if(err) console.log(err);
           cohort.profiles = JSON.parse(body).members;
+          console.log(cohort);
           res.send(JSON.stringify(cohort));
       });
     }

@@ -64,7 +64,7 @@ export default (controller) => {
       botModel.checkUser(user, (status) => {
           if(status === false || status === undefined){
             bot.startPrivateConversation(message, (err, convo) => {
-              convo.ask('Was your question about ' + classifier.classify(message.text) + '? If you would like to end this current conversation, please reply with "end", if you want me to stop messing you entirely, please reply with "stop".', [
+              convo.ask('Was your question about ' + classifier.classify(message.text) + '? If you would like to stop recieving these messages, please reply with "stop".', [
                 {
                   pattern: bot.utterances.yes,
                   callback: (response, convo) => {
@@ -135,13 +135,6 @@ export default (controller) => {
                     convo.say('You have been added to my do not disturb list, if you would ever like to contribute in the future please DM me with they keyword, "join", thanks!');
                     user.dnd = true;
                     botModel.updateUser(user);
-                    convo.next();
-                  }
-                },
-                {
-                  pattern: 'end',
-                  default: false,
-                  callback: (response, convo) => {
                     convo.next();
                   }
                 }

@@ -13,7 +13,7 @@ export function queryCohortProfiles(cb) {
 }
 
 export function getMessages() {
-  return connection()
+  return connection
     .then(conn =>
       r.table('messages')
         .run(conn)
@@ -22,7 +22,7 @@ export function getMessages() {
 }
 
 export function getSearchResults(word) {
-  return connection()
+  return connection
     .then(conn =>
       r.table('messages')
         .filter(message =>
@@ -34,7 +34,7 @@ export function getSearchResults(word) {
 }
 
 export function getAvgMessagesByHour({ year, month, day }) {
-   return connection()
+   return connection
      .then(conn =>
        r.table('messages')
          .filter(
@@ -48,7 +48,7 @@ export function getAvgMessagesByHour({ year, month, day }) {
 }
 // TODO: add number of messages for each hour?
 export function getVolumeOfMessagesByHour({ year, month, day }) {
-  return connection()
+  return connection
     .then(conn =>
       r.table('messages')
         .filter(
@@ -62,7 +62,7 @@ export function getVolumeOfMessagesByHour({ year, month, day }) {
 }
 
 export function getAvgMessagesByDayOfWeek() {
-  return connection()
+  return connection
     .then(conn =>
       r.table('messages')
         .group(r.row('ts').dayOfWeek())
@@ -73,7 +73,7 @@ export function getAvgMessagesByDayOfWeek() {
 }
 
 export function getAllUniqueWords() {
-  return connection()
+  return connection
     .then(conn =>
       r.table('messages')
       .getField('tokens')
@@ -84,8 +84,8 @@ export function getAllUniqueWords() {
 }
 
 export function queryWordCountByUser() {
-  return connection()
-    .then(conn =>
+  return connection
+    .then(conn => 
       r.table('messages')
       .limit(1000)
       .group('user')
@@ -98,7 +98,7 @@ export function queryWordCountByUser() {
 }
 
 export function queryUserMessagesById() {
-  return connection()
+  return connection
   .then(conn =>
   r.table('messages')
   .group('user')
@@ -109,7 +109,7 @@ export function queryUserMessagesById() {
 }
 
 export function getClassifications(){
-  return connection()
+  return connection
   .then(conn =>
     r.table('messages')
     .hasFields('classification')
@@ -121,7 +121,7 @@ export function getClassifications(){
 }
 
 export function getUserMessageReduction(){
-  return connection()
+  return connection
   .then(conn =>
     r.table('messages')
     .hasFields('name')
@@ -133,7 +133,7 @@ export function getUserMessageReduction(){
 }
 
 export function getSingleUserMessageReduction(userId){
-  return connection()
+  return connection
   .then(conn =>
     r.table('messages')
     .filter({user: userId})
