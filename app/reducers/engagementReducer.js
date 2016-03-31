@@ -1,6 +1,5 @@
 
-
-export default function engagement(state = [], action) {
+export default function engagementReducer(state = [], action) {
   switch (action.type) {
     case 'RECEIVE_ENGAGEMENT_BY_USER':
     state = action.count.reduce((arr, user) => {
