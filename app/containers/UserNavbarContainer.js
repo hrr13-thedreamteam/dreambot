@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import UserNavbar from '../components/UserNavbar';
-import _ from 'lodash';
 
 const getAnalytics = (messages) => {
   let analytics = messages.reduce((acc, message) => {

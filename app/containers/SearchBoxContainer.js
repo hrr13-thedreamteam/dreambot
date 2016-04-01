@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import SearchBox from '../components/SearchBox';
-import { searchKeyword, filterMessages, disableFilterMessages } from '../actions/index';
+import { searchKeyword, disableFilterMessages } from '../actions/index';
 
 const detectChange = () => {
   console.log('Detecting changes...');

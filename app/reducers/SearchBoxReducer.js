@@ -1,4 +1,3 @@
-import { requestSearch } from '../actions/index';
 
 const initialState = {
   inputField: '',

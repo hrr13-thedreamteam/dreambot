@@ -5,7 +5,6 @@ import Main from '../components/Main';
 import App from '../containers/App';
 import Home from '../components/Home';
 import Questions from '../components/Questions';
-import QuestionsContainer from '../containers/QuestionsContainer';
 import AveragesContainer from '../containers/AveragesContainer';
 import UserProfileContainer from '../containers/UserProfileContainer';
 import LoginContainer from '../containers/LoginContainer';

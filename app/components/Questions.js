@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactRouter from 'react-router';
 import QuestionsContainer from '../containers/QuestionsContainer'
-import NavbarContainer from '../containers/NavbarContainer';
 import QuestionNavbarContainer from '../containers/QuestionNavbarContainer';
 import LeftPanelContainer from '../containers/LeftPanelContainer';
 import SearchBoxContainer from '../containers/SearchBoxContainer';

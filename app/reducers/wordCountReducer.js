@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 
 export default function wordCountReducer(state = {}, action){
   switch (action.type) {

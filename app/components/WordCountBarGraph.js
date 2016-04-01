@@ -1,6 +1,5 @@
 import React from 'react';
 import { Bar as BarChart } from 'react-chartjs';
-import styles from '../styles';
 
 
 let WordCountBarGraph = ({data = [], labels = []}) => {
