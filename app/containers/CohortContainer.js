@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import Cohort from '../components/Cohort';
-import { getCohortProfiles, receiveCohortProfiles, receiveWordCountByUser, sortUsersByEngagement, sortUserByMessageLenAction } from '../actions/userProfileActions';
-import { queryCohortProfiles, queryWordCountByUser, queryUserMessagesById } from '../actions/queries';
+import { receiveCohortProfiles, sortUsersByEngagement, sortUserByMessageLenAction } from '../actions/userProfileActions';
+import { queryCohortProfiles, queryUserMessagesById } from '../actions/queries';
 import LeftPanelContainer from '../containers/LeftPanelContainer';
 import { getWordCountByUser } from '../actions/userProfileActions';
 
@@ -63,7 +62,7 @@ let mapDispatchToProps = (dispatch) => {
         members: [],
         profiles: {}
       };
-      // FIXME: Colton's "U0S27FI8Z" User ID does not match with his "U0S1PNSBY" ID in db 
+      // FIXME: Colton's "U0S27FI8Z" User ID does not match with his "U0S1PNSBY" ID in db
       queryCohortProfiles(data => {
         profileObj.members = data.data.members;
         data.data.profiles.forEach(student => {

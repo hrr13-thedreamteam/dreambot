@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 import BarGraph from '../components/BarGraph';
 import UserMessagesContainer from '../containers/UserMessagesContainer';
-import GraphContainer from '../containers/GraphContainer';
 import UserNavbarContainer from '../containers/UserNavbarContainer';
 import LeftPanelContainer from '../containers/LeftPanelContainer';
 import SearchBoxContainer from '../containers/SearchBoxContainer';

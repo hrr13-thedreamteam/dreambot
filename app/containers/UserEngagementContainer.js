@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import UserEngagement from '../components/UserEngagement';
-import _ from 'lodash';
 import moment from 'moment';
 // import d3 from 'd3';
 

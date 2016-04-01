@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import Navbar from '../components/Navbar';
-import _ from 'lodash';
 
 const getAnalytics = (messages) => {
   let analytics = messages.reduce((acc, message) => {
@@ -15,7 +14,7 @@ const getAnalytics = (messages) => {
 let mapStateToProps = (state) => {
   return {
     messages: state.messages.messages,
-    analytics: Object.assign({}, getAnalytics(state.messages.messages), 
+    analytics: Object.assign({}, getAnalytics(state.messages.messages),
     {
       topics: Object.keys(state.wordCount).map(key => ({ [key]:state.wordCount[key] } ))
       .sort((a, b) => b[Object.keys(b).join('')] - a[Object.keys(a).join('')])

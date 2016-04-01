@@ -1,5 +1,4 @@
 import React from 'react';
-import { Line as LineChart } from 'react-chartjs';
 import { Bar as BarChart } from 'react-chartjs';
 import styles from '../styles';
 

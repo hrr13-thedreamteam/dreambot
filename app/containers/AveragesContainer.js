@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 
 import Graph from '../components/Graph';
-import Test from '../components/Test';
 import Selector from '../components/Selector';
 
 import { getHoursIfNeeded, notify } from '../actions';
 
-const TestContainer = React.createClass({
+const AveragesContainer = React.createClass({
   componentDidMount() {
     // Grab today's date by default
     this.props.dispatch(getHoursIfNeeded({
@@ -47,4 +46,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(TestContainer);
+export default connect(mapStateToProps)(AveragesContainer);

@@ -6,7 +6,6 @@
   Research: Why does he import the babel-polyfill?
 */
 import 'babel-polyfill';
-import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { browserHistory } from 'react-router';

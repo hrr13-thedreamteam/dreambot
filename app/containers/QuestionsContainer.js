@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import BarGraph from '../components/BarGraph';
-import BarGraphContainer from '../containers/BarGraphContainer'
-
 import { fetchCategories } from '../actions'
 
 

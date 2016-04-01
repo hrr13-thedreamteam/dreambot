@@ -27,7 +27,7 @@ const sortMessages = (array) => {
   });
 };
 
-export default function messages(state = initialState, action) {
+export default function messagesReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_MESSAGE:
       return Object.assign({}, state,
